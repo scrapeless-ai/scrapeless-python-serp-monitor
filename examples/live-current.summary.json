@@ -1,0 +1,34 @@
+{
+  "run_id": "60c13c8bd553",
+  "observation_date": "2026-10-29",
+  "mode": "live",
+  "keywords": [
+    "scrapeless",
+    "web scraping api",
+    "google search api"
+  ],
+  "success_snapshots": 3,
+  "csv_rows": 3,
+  "organic_counts": [
+    9,
+    7,
+    9
+  ],
+  "positions": [
+    "3",
+    "",
+    ""
+  ],
+  "states": [
+    "baseline",
+    "baseline_absent",
+    "baseline_absent"
+  ],
+  "report_version": 1,
+  "report_state": "complete",
+  "reexport_bytes_identical": true,
+  "original_private_csv_sha256": "264212044f87908a0ec67d561be644676e74b5817ef1a50217ea0f08384ae018",
+  "published_csv_sha256": "5c87ce78d2f91206a40d400b9a1a7d739494ac077e256fc231fcc37be8cf1293",
+  "publication_redaction": "Matching URL paths are generalized. Ranks, counts, states and request timestamps are unchanged.",
+  "scope": "Desktop, first returned organic page; first baseline, no multi-day change claim."
+}
