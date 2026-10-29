@@ -93,7 +93,7 @@ CSV: output/60c13c8bd553-v1.csv
 
 *Read-only browser view of stdout retained from the actual command, not a native-terminal screenshot.*
 
-History is saved in data/rankings.sqlite; the report is saved in output/<run-id>-v1.csv. Your ID, ranks and returned counts may differ.
+History is saved in data/rankings.sqlite; the report is saved in `output/<run-id>-v1.csv`. Your ID, ranks and returned counts may differ.
 
 ## 5. Understand the request and ranking logic
 
