@@ -1,22 +1,21 @@
 <p align="center">
-  <a href="https://app.scrapeless.com/passport/login?redirect=%2Fquick-start&amp;utm_source=github&amp;utm_medium=referral&amp;utm_campaign=python-serp-rank-tracker&amp;utm_content=repository-readme"><img src="assets/serp-monitor-banner.png" alt="Python SERP Monitor: Google organic keyword positions, SQLite history and CSV comparisons with Scrapeless." width="100%" /></a>
+  <a href="https://app.scrapeless.com/passport/login?redirect=%2Fquick-start&amp;utm_source=github&amp;utm_medium=referral&amp;utm_campaign=scrapeless-python-serp-monitor&amp;utm_content=repository-readme"><img src="assets/serp-monitor-banner.png" alt="Python SERP Monitor: Google organic keyword positions, SQLite history and CSV comparisons with Scrapeless." width="100%" /></a>
 </p>
 
 # Scrapeless Python SERP Monitor
 
 <p align="center">
-  <a href="https://app.scrapeless.com/passport/login?redirect=%2Fquick-start&amp;utm_source=github&amp;utm_medium=referral&amp;utm_campaign=python-serp-rank-tracker&amp;utm_content=repository-readme"><img src="assets/start-free.png" alt="Get started with Scrapeless" width="161" height="28" /></a>
-  <a href="https://www.scrapeless.com/en/blog?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=python-serp-rank-tracker&amp;utm_content=repository-readme"><img src="assets/blog.png" alt="Read Scrapeless guides" width="168" height="28" /></a>
-  <a href="https://x.com/Scrapelessteam?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=python-serp-rank-tracker&amp;utm_content=repository-readme"><img src="assets/x.png" alt="Follow Scrapeless on X" width="140" height="28" /></a>
-  <a href="https://www.linkedin.com/company/scrapeless/?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=python-serp-rank-tracker&amp;utm_content=repository-readme"><img src="assets/linkedin.png" alt="Follow Scrapeless on LinkedIn" width="190" height="28" /></a>
+  <a href="https://app.scrapeless.com/passport/login?redirect=%2Fquick-start&amp;utm_source=github&amp;utm_medium=referral&amp;utm_campaign=scrapeless-python-serp-monitor&amp;utm_content=repository-readme"><img src="assets/start-free.png" alt="Get started with Scrapeless" width="161" height="28" /></a>
+  <a href="https://www.scrapeless.com/en/blog?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=scrapeless-python-serp-monitor&amp;utm_content=repository-readme"><img src="assets/blog.png" alt="Read Scrapeless guides" width="168" height="28" /></a>
+  <a href="https://x.com/Scrapelessteam?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=scrapeless-python-serp-monitor&amp;utm_content=repository-readme"><img src="assets/x.png" alt="Follow Scrapeless on X" width="140" height="28" /></a>
+  <a href="https://www.linkedin.com/company/scrapeless/?utm_source=github&amp;utm_medium=referral&amp;utm_campaign=scrapeless-python-serp-monitor&amp;utm_content=repository-readme"><img src="assets/linkedin.png" alt="Follow Scrapeless on LinkedIn" width="190" height="28" /></a>
 </p>
 
 Track Google organic keyword positions, retain SQLite snapshots, and export ranking-change CSVs with Python and Scrapeless.
 
-**[Get your Scrapeless API key with $5 Free credits!](https://app.scrapeless.com/passport/login?redirect=%2Fquick-start&utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme)**
+**[Get your Scrapeless API key with $5 Free credits!](https://app.scrapeless.com/passport/login?redirect=%2Fquick-start&utm_source=github&utm_medium=referral&utm_campaign=scrapeless-python-serp-monitor&utm_content=repository-readme)**
 
-- **Documentation:** [Google Search API quickstart](https://docs.scrapeless.com/en/docs/scraping-api/google-search/quickstart/?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme)
-- **Beginner walkthrough:** [Create your first three-keyword report](https://github.com/scrapeless-ai/python-serp-rank-tracker/blob/main/docs/blog.en.md?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme)
+- **Documentation:** [Google Search API quickstart](https://docs.scrapeless.com/en/docs/scraping-api/google-search/quickstart/?utm_source=github&utm_medium=referral&utm_campaign=scrapeless-python-serp-monitor&utm_content=repository-readme)
 - **Command help:** `python3 serp_monitor.py --help`
 
 Keep a small keyword watchlist and answer: which positions changed since the last successful observation under the same search conditions?
@@ -29,25 +28,23 @@ Keep a small keyword watchlist and answer: which positions changed since the las
 | `export` | Read an immutable saved report version | No |
 | `demo` | Try two synthetic rounds without a key | No |
 
-[Quick start](#quick-start) · [Configuration](#configuration) · [Usage](#usage) · [CSV output](#csv-output) · [Troubleshooting](#troubleshooting)
-
 ## Quick start
 
 Requires **Python 3.9+ on macOS or Linux**, SQLite support and a Scrapeless API key with available credits. The project uses the Python standard library and POSIX file locks.
 
 ### 1. Download the project
 
-[Open the starter ZIP](https://github.com/scrapeless-ai/python-serp-rank-tracker/blob/main/downloads/scrapeless-serp-starter.zip?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme) and click **Download raw file** on its GitHub file page. Save and extract it in Downloads, keeping the folder name `scrapeless-serp-starter`.
+On this repository page, select **Code > Download ZIP**, extract the archive, and open the extracted project folder in your terminal. The default archive folder is `scrapeless-python-serp-monitor-main`; use the actual folder name if it differs:
 
 ```bash
-cd ~/Downloads/scrapeless-serp-starter
+cd ~/Downloads/scrapeless-python-serp-monitor-main
 ```
 
-For a full repository checkout, run the commands below from the repository root. No third-party Python package installation or separate database server is required. Check the environment with `python3 --version` and `python3 -c "import sqlite3, ssl, fcntl; print('Environment check: OK')"`.
+Confirm that `serp_monitor.py`, `tutorial.py`, `starter.html`, and `config.json` are present. Run subsequent commands from this directory. No third-party Python package installation or separate database server is required. Check the environment with `python3 --version` and `python3 -c "import sqlite3, ssl, fcntl; print('Environment check: OK')"`.
 
 ### 2. Configure the API key and watchlist
 
-Get your shared key from the [Scrapeless dashboard](https://app.scrapeless.com/passport/login?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme). Create a private configuration file without overwriting an existing one:
+Get your shared key from the [Scrapeless dashboard](https://app.scrapeless.com/passport/login?utm_source=github&utm_medium=referral&utm_campaign=scrapeless-python-serp-monitor&utm_content=repository-readme). Create a private configuration file without overwriting an existing one:
 
 ```bash
 cp -n .env.example .env
@@ -159,7 +156,7 @@ Resume uses saved request settings and task IDs. Successful keywords are skipped
 python3 serp_monitor.py collect --timeout 60 --poll-timeout 180 --poll-interval 3
 ```
 
-Defaults are 60 seconds per request, 120 seconds for each polling window, and 2 seconds between normal polls. See the [complete CLI reference](https://github.com/scrapeless-ai/python-serp-rank-tracker/blob/main/docs/cli.md?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme) for every option and default.
+Defaults are 60 seconds per request, 120 seconds for each polling window, and 2 seconds between normal polls. See `docs/cli.md` for every option and default.
 
 ## CSV output
 
@@ -189,15 +186,15 @@ Live run `60c13c8bd553`, observed October 29, 2026, produced this first-baseline
 | `web scraping api` | blank | blank | blank | `baseline_absent` | 7 |
 | `google search api` | blank | blank | blank | `baseline_absent` | 9 |
 
-The three keyword collections succeeded and produced one run, three SQLite snapshots and three CSV rows. Re-exporting version 1 produced identical CSV bytes. See the [redacted CSV sample](https://github.com/scrapeless-ai/python-serp-rank-tracker/blob/main/examples/live-current.csv?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme), [validation summary](https://github.com/scrapeless-ai/python-serp-rank-tracker/blob/main/examples/live-current.summary.json?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme) and [field reference](https://github.com/scrapeless-ai/python-serp-rank-tracker/blob/main/docs/output.md?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme).
+The three keyword collections succeeded and produced one run, three SQLite snapshots and three CSV rows. Re-exporting version 1 produced identical CSV bytes. See `examples/live-current.csv`, `examples/live-current.summary.json` and `docs/output.md`.
 
-[![Selected columns from the actual exported CSV](assets/tutorial/08-csv.png)](assets/tutorial/08-csv.png)
+![Selected columns from the actual exported CSV](assets/tutorial/08-csv.png)
 
 *Read-only browser view of selected columns from the actual CSV, not a spreadsheet application screenshot. Blank fields remain blank. Search results can vary.*
 
 ## How it works
 
-[![Search requests become SQLite snapshots and CSV comparisons](assets/workflow.png)](assets/workflow.png)
+![Search requests become SQLite snapshots and CSV comparisons](assets/workflow.png)
 
 1. Submit `scraper.google.search` for each configured keyword.
 2. Resolve recognized Google redirect links, then validate every returned organic item; never silently drop unresolved rows.
@@ -205,7 +202,7 @@ The three keyword collections succeeded and produced one run, three SQLite snaps
 4. Freeze a baseline whose result was received before the current request began. Overlapping or unknown intervals are not compared.
 5. Store immutable report versions, including incomplete and data-quality states.
 
-Google `/goto` and `/url` wrappers are resolved through Google Location headers or explicit plain-text targets. Those lookups carry no API key and never visit the destination website. Failures remain errors. HTTP `200` returns completed results. HTTP `201` provides a `taskId`, saved before polling the existing task. The monitor requests first-page desktop organic web results with `start: 0`; it does not paginate or combine ads, maps and AI citations into one ranking. See [API implementation notes](https://github.com/scrapeless-ai/python-serp-rank-tracker/blob/main/docs/api-notes.md?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme).
+Google `/goto` and `/url` wrappers are resolved through Google Location headers or explicit plain-text targets. Those lookups carry no API key and never visit the destination website. Failures remain errors. HTTP `200` returns completed results. HTTP `201` provides a `taskId`, saved before polling the existing task. The monitor requests first-page desktop organic web results with `start: 0`; it does not paginate or combine ads, maps and AI citations into one ranking. See `docs/api-notes.md`.
 
 ## Troubleshooting
 
@@ -236,15 +233,15 @@ python3 daily_workflow.py run --config "$PWD/config.json" --env-file "$PWD/.env"
 
 Read `output/daily/latest-attempt.json` first, then its summary and CSV. Each attempt writes a human-readable summary, a JSON summary and a review CSV under `runs/<run-id>/`. Review reasons include declines, landing-page changes, missing targets, coverage changes and data-quality problems. A failed attempt leaves `latest-success.json` pointing to the previous successful collection; it is not the current attempt. A successful collection can still contain review items or `not_comparable` rows.
 
-For scheduling, backup and a step-by-step recovery table, use the [operations guide](https://github.com/scrapeless-ai/python-serp-rank-tracker/blob/main/docs/operations.md?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme). The macOS example checks a configured UTC daily slot once per minute. Rendering the example does not activate it. A slot is attempted at most once per date, including failed or interrupted attempts; investigate and explicitly resume saved work. Use one configuration and artifact directory per database.
+For scheduling, backup and a step-by-step recovery table, read `docs/operations.md`. The macOS example checks a configured UTC daily slot once per minute. Rendering the example does not activate it. A slot is attempted at most once per date, including failed or interrupted attempts; investigate and explicitly resume saved work. Use one configuration and artifact directory per database.
 
 Request volume is keywords times new-run frequency, plus never-submitted queued keywords resumed later. Multiple target domains reuse each keyword response. Result GET polls are counted separately; this is not a verified billing estimate.
 
-The live example in this guide covers one collection. For recurring use, verify the schedule and review thresholds against your own saved history. Read the [validation boundaries](https://github.com/scrapeless-ai/python-serp-rank-tracker/blob/main/docs/validation.md?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme).
+The live example in this guide covers one collection. For recurring use, verify the schedule and review thresholds against your own saved history. Read the validation scope below.
 
 ## Database upgrades
 
-Opening an older database automatically creates a private `.pre-v2.sqlite` backup and migrates schema version 2 without deleting runs or raw historical data. Legacy request submission times are unknown; historical change directions are not reconstructed. Keep the archived CSVs and follow the [migration guide](https://github.com/scrapeless-ai/python-serp-rank-tracker/blob/main/docs/migration.md?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme) before using an existing database.
+Opening an older database automatically creates a private `.pre-v2.sqlite` backup and migrates schema version 2 without deleting runs or raw historical data. Legacy request submission times are unknown; historical change directions are not reconstructed. Keep the archived CSVs and follow the instructions in `docs/migration.md` before using an existing database.
 
 ## Development
 
@@ -253,26 +250,31 @@ python3 -m unittest discover -s tests -v
 python3 serp_monitor.py demo
 ```
 
-Development checks require the full repository checkout; the starter ZIP contains the runtime files only. The tests and synthetic demo need no API key. The supplied Actions workflow checks Python 3.9 and 3.13. Read [contribution guidance](https://github.com/scrapeless-ai/python-serp-rank-tracker/blob/main/CONTRIBUTING.md?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme) and [validation boundaries](https://github.com/scrapeless-ai/python-serp-rank-tracker/blob/main/docs/validation.md?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme).
+Run development checks from the full downloaded repository. The tests and synthetic demo need no API key. The supplied Actions workflow checks Python 3.9 and 3.13. Read `CONTRIBUTING.md` and the validation scope below.
+
+## Validation scope
+
+The included live CSV is a first-baseline example, not evidence of a multi-day ranking trend. Its matching URL paths are generalized; ranks, counts, states, and request timestamps are preserved. The automated tests and synthetic demo make no paid service requests and do not establish continuous live operation, machine-reboot recovery, or consecutive multi-day schedule reliability.
+
+The local browser interface runs on the user's computer. It is not a hosted website. The CSV figure is a read-only browser view of selected actual output fields, not a spreadsheet application screenshot.
 
 ## Related projects
 
-- [Scrapeless Google Scraper](https://github.com/scrapeless-ai/google-scraper?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme) - API examples for search workflows.
-- [Scrapeless CLI](https://github.com/scrapeless-ai/scrapeless-cli?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme) - Scrapeless tools from the terminal.
+- [Scrapeless Google Search API](https://docs.scrapeless.com/en/docs/scraping-api/google-search/quickstart/?utm_source=github&utm_medium=referral&utm_campaign=scrapeless-python-serp-monitor&utm_content=repository-readme) - API examples for search workflows.
+- [Scrapeless CLI](https://docs.scrapeless.com/en/docs/developer-tools/cli/?utm_source=github&utm_medium=referral&utm_campaign=scrapeless-python-serp-monitor&utm_content=repository-readme) - Scrapeless tools from the terminal.
 
 ## Learn more
 
-- [Google Search API product](https://www.scrapeless.com/en/product/google-search-api?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme)
-- [Google Search API documentation](https://docs.scrapeless.com/en/docs/scraping-api/google-search/quickstart/?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme)
-- [Google Search API parameters](https://apidocs.scrapeless.com/doc-800321?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme)
-- [Companion implementation walkthrough](https://github.com/scrapeless-ai/python-serp-rank-tracker/blob/main/docs/blog.en.md?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme)
+- [Google Search API product](https://www.scrapeless.com/en/product/google-search-api?utm_source=github&utm_medium=referral&utm_campaign=scrapeless-python-serp-monitor&utm_content=repository-readme)
+- [Google Search API documentation](https://docs.scrapeless.com/en/docs/scraping-api/google-search/quickstart/?utm_source=github&utm_medium=referral&utm_campaign=scrapeless-python-serp-monitor&utm_content=repository-readme)
+- [Google Search API parameters](https://apidocs.scrapeless.com/doc-800321?utm_source=github&utm_medium=referral&utm_campaign=scrapeless-python-serp-monitor&utm_content=repository-readme)
 
 ## Contact us
 
 For code issues, open an issue in the repository where this project is hosted. Include the command, runtime version, sanitized error and expected result. Remove API keys and private URLs before sharing.
 
-For product and API help, use [Discord](https://discord.gg/stFPK2xKHY?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme) or [Telegram](https://t.me/scrapeless?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme).
+For product and API help, use [Discord](https://discord.gg/stFPK2xKHY?utm_source=github&utm_medium=referral&utm_campaign=scrapeless-python-serp-monitor&utm_content=repository-readme) or [Telegram](https://t.me/scrapeless?utm_source=github&utm_medium=referral&utm_campaign=scrapeless-python-serp-monitor&utm_content=repository-readme).
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). API access requires a separate Scrapeless account and credentials.
+This project is licensed under the MIT license in `LICENSE`. API access requires a separate Scrapeless account and credentials.

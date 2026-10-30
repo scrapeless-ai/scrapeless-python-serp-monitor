@@ -84,4 +84,4 @@ On macOS, run the additional real-process/OS-timer harness against an isolated l
 python tests/run_feasibility.py /tmp/serp-controlled-check
 ```
 
-It creates and removes a temporary controlled timer; it does not install the live daily job. Keep the output directory new. See [validation](validation.md) for retained real-call boundaries.
+It creates and removes a temporary controlled timer; it does not install the live daily job. Keep the output directory new. See the validation scope in `README.md` for retained real-call boundaries.

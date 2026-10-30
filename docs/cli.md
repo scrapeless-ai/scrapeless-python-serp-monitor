@@ -15,7 +15,7 @@ Use Python 3.9+ on macOS or Linux with local SQLite storage. All collection path
 | `--poll-timeout SECONDS` | 120 | Polling deadline per pending attempt |
 | `--poll-interval SECONDS` | 2 | Normal interval; transient GET failures back off |
 
-New default runs submit up to three searches. Resume skips success, polls saved task IDs, and may submit never-submitted queued keywords. Empty-unverified rows and uncertain failed requests without IDs are not automatically resubmitted. Keep the same database. Older schemas migrate before use; see [migration](migration.md).
+New default runs submit up to three searches. Resume skips success, polls saved task IDs, and may submit never-submitted queued keywords. Empty-unverified rows and uncertain failed requests without IDs are not automatically resubmitted. Keep the same database. Older schemas migrate before use; see `migration.md`.
 
 ## history
 
@@ -50,7 +50,7 @@ Two synthetic rounds in an in-memory database; no key, API requests or live data
 
 ## Daily operations
 
-`daily_workflow.py` supports `run`, `resume`, `tick` and `backup`. It requires `--db` and `--artifacts`, resolves them absolutely, and shares the core lock. It defaults `--config` and `--env-file` to the project directory. `resume` requires `--run-id`; `backup` requires a new `--destination`. Timeout options match `collect`; `tick --at-utc HH:MM` defaults to `09:00`. `--controlled-url` is a test-only HTTP loopback origin using a dummy token and demo mode; it cannot send a real key to an arbitrary endpoint. See [operations](operations.md) for commands, schedule activation and recovery.
+`daily_workflow.py` supports `run`, `resume`, `tick` and `backup`. It requires `--db` and `--artifacts`, resolves them absolutely, and shares the core lock. It defaults `--config` and `--env-file` to the project directory. `resume` requires `--run-id`; `backup` requires a new `--destination`. Timeout options match `collect`; `tick --at-utc HH:MM` defaults to `09:00`. `--controlled-url` is a test-only HTTP loopback origin using a dummy token and demo mode; it cannot send a real key to an arbitrary endpoint. See `operations.md` for commands, schedule activation and recovery.
 
 ## Exit codes
 

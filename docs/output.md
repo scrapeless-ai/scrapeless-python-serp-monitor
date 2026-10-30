@@ -35,7 +35,7 @@ A report has one row per snapshot and configured target domain. Inputs and live/
 
 A completed report repeated with the same `--run-id` and `--version` has identical CSV bytes and baseline IDs. Resume may create a new partial/completed version; use `--version 1` to retrieve the prior one. A successful no-op resume does not create a version. Default filenames contain the run ID and version. An explicit `--output` can overwrite the file you selected; saved database versions remain available.
 
-CSV uses UTF-8 with a byte-order mark, and formula-like text cells are escaped. See [migration](migration.md) for older history and [operations](operations.md) for review summaries.
+CSV uses UTF-8 with a byte-order mark, and formula-like text cells are escaped. See `migration.md` for older history and `operations.md` for review summaries.
 
 ## Link provenance
 
