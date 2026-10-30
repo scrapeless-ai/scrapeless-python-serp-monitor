@@ -13,7 +13,7 @@
 
 Track Google organic keyword positions, retain SQLite snapshots, and export ranking-change CSVs with Python and Scrapeless.
 
-**[Get your Scrapeless API key](https://app.scrapeless.com/passport/login?redirect=%2Fquick-start&utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme)**
+**[Get your Scrapeless API key with $5 Free credits!](https://app.scrapeless.com/passport/login?redirect=%2Fquick-start&utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme)**
 
 - **Documentation:** [Google Search API quickstart](https://docs.scrapeless.com/en/docs/scraping-api/google-search/quickstart/?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme)
 - **Beginner walkthrough:** [Create your first three-keyword report](https://github.com/scrapeless-ai/python-serp-rank-tracker/blob/main/docs/blog.en.md?utm_source=github&utm_medium=referral&utm_campaign=python-serp-rank-tracker&utm_content=repository-readme)
