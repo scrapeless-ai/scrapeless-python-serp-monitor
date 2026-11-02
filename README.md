@@ -156,7 +156,7 @@ Resume uses saved request settings and task IDs. Successful keywords are skipped
 python3 serp_monitor.py collect --timeout 60 --poll-timeout 180 --poll-interval 3
 ```
 
-Defaults are 60 seconds per request, 120 seconds for each polling window, and 2 seconds between normal polls. See `docs/cli.md` for every option and default.
+Defaults are 60 seconds per request, 120 seconds for each polling window, and 2 seconds between normal polls. Run `python3 serp_monitor.py collect --help` for collection options and `python3 serp_monitor.py export --help` for export options.
 
 ## CSV output
 
@@ -186,7 +186,7 @@ Live run `60c13c8bd553`, observed October 29, 2026, produced this first-baseline
 | `web scraping api` | blank | blank | blank | `baseline_absent` | 7 |
 | `google search api` | blank | blank | blank | `baseline_absent` | 9 |
 
-The three keyword collections succeeded and produced one run, three SQLite snapshots and three CSV rows. Re-exporting version 1 produced identical CSV bytes. See `examples/live-current.csv`, `examples/live-current.summary.json` and `docs/output.md`.
+The three keyword collections succeeded and produced one run, three SQLite snapshots and three CSV rows. Re-exporting version 1 produced identical CSV bytes. See `examples/live-current.csv` and `examples/live-current.summary.json`.
 
 ![Selected columns from the actual exported CSV](assets/tutorial/08-csv.png)
 
@@ -202,7 +202,7 @@ The three keyword collections succeeded and produced one run, three SQLite snaps
 4. Freeze a baseline whose result was received before the current request began. Overlapping or unknown intervals are not compared.
 5. Store immutable report versions, including incomplete and data-quality states.
 
-Google `/goto` and `/url` wrappers are resolved through Google Location headers or explicit plain-text targets. Those lookups carry no API key and never visit the destination website. Failures remain errors. HTTP `200` returns completed results. HTTP `201` provides a `taskId`, saved before polling the existing task. The monitor requests first-page desktop organic web results with `start: 0`; it does not paginate or combine ads, maps and AI citations into one ranking. See `docs/api-notes.md`.
+Google `/goto` and `/url` wrappers are resolved through Google Location headers or explicit plain-text targets. Those lookups carry no API key and never visit the destination website. Failures remain errors. HTTP `200` returns completed results. HTTP `201` provides a `taskId`, saved before polling the existing task. The monitor requests first-page desktop organic web results with `start: 0`; it does not paginate or combine ads, maps and AI citations into one ranking.
 
 ## Troubleshooting
 
@@ -217,7 +217,7 @@ Google `/goto` and `/url` wrappers are resolved through Google Location headers 
 | Missing `organic_results` | Inspect the response or contact support; unusable data is an error |
 | Blank rank / unexpected baseline | Check target hostname, returned coverage, search inputs, and database path |
 | `empty_unverified` | Review response quality; do not treat it as a lost ranking or blindly retry |
-| `not_comparable` | Check request intervals and migration notes; no direction is calculated |
+| `not_comparable` | Check request intervals and database upgrade behavior; no direction is calculated |
 | Busy, exit 75 | Let the active process finish; scheduled and manual runs share this protection |
 
 HTTP `401`, `402`, `403` and `429` stop the batch before remaining keywords are submitted. Other keyword failures are recorded while the batch continues. Exit codes: `0` for success, `1` for incomplete or failed work, `75` for a busy database, `130` for interruption. All collection entry points share the same database lock. The OS releases it after process death; do not delete the lock sidecar. Use local storage, not a network-shared database.
@@ -233,7 +233,7 @@ python3 daily_workflow.py run --config "$PWD/config.json" --env-file "$PWD/.env"
 
 Read `output/daily/latest-attempt.json` first, then its summary and CSV. Each attempt writes a human-readable summary, a JSON summary and a review CSV under `runs/<run-id>/`. Review reasons include declines, landing-page changes, missing targets, coverage changes and data-quality problems. A failed attempt leaves `latest-success.json` pointing to the previous successful collection; it is not the current attempt. A successful collection can still contain review items or `not_comparable` rows.
 
-For scheduling, backup and a step-by-step recovery table, read `docs/operations.md`. The macOS example checks a configured UTC daily slot once per minute. Rendering the example does not activate it. A slot is attempted at most once per date, including failed or interrupted attempts; investigate and explicitly resume saved work. Use one configuration and artifact directory per database.
+Run `python3 daily_workflow.py --help` for run, resume, tick and backup commands, and `python3 render_launchd.py --help` for the optional macOS scheduler. Rendering a schedule does not activate it. A scheduled slot is attempted at most once per date, including failed or interrupted attempts; investigate and explicitly resume saved work. Use one configuration and artifact directory per database.
 
 Request volume is keywords times new-run frequency, plus never-submitted queued keywords resumed later. Multiple target domains reuse each keyword response. Result GET polls are counted separately; this is not a verified billing estimate.
 
@@ -241,7 +241,7 @@ The live example in this guide covers one collection. For recurring use, verify 
 
 ## Database upgrades
 
-Opening an older database automatically creates a private `.pre-v2.sqlite` backup and migrates schema version 2 without deleting runs or raw historical data. Legacy request submission times are unknown; historical change directions are not reconstructed. Keep the archived CSVs and follow the instructions in `docs/migration.md` before using an existing database.
+Opening an older database automatically creates a private `.pre-v2.sqlite` backup and migrates schema version 2 without deleting runs or raw historical data. Legacy request submission times are unknown; historical change directions are not reconstructed. Stop other collectors and preserve the database and archived CSVs before using an existing database. An existing `.pre-v2.sqlite` backup is never overwritten; preserve it and move it aside before retrying a failed migration. Inspect migrated history with `python3 serp_monitor.py history --db data/rankings.sqlite` before collecting again.
 
 ## Development
 
